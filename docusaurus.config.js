@@ -38,7 +38,23 @@ const config = {
   },
 
   // plugin for the search
-  plugins: [require.resolve('docusaurus-lunr-search')],
+  plugins: [
+    require.resolve('docusaurus-lunr-search'), 
+    ['plugin-image-zoom',
+      {
+      selector: '.markdown img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: '#BADA55',
+        scrollOffset: 0,
+        container: '#zoom-container',
+        template: '#zoom-template',
+      }
+      },
+    ]
+  ],
 
   presets: [
     [
